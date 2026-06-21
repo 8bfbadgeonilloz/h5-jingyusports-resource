@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>鲸鱼体育 · 运动生活杂志</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Georgia', 'Times New Roman', 'Noto Serif SC', serif;
+      background: #f7f3ee;
+      color: #2d2a27;
+      line-height: 1.8;
+      padding: 2rem 1.5rem;
+    }
+
+    .magazine-wrapper {
+      max-width: 920px;
+      margin: 0 auto;
+      background: #fdfaf7;
+      border-radius: 28px;
+      box-shadow: 0 12px 40px rgba(0, 0, 0, 0.04);
+      padding: 3rem 2.5rem 4rem;
+    }
+
+    .hero-badge {
+      display: inline-block;
+      background: #e6ddd3;
+      color: #3f3731;
+      font-size: 0.8rem;
+      letter-spacing: 1px;
+      padding: 0.3rem 1rem;
+      border-radius: 30px;
+      margin-bottom: 1.2rem;
+      font-family: 'Helvetica Neue', sans-serif;
+      text-transform: uppercase;
+    }
+
+    h1 {
+      font-size: 2.6rem;
+      font-weight: 500;
+      letter-spacing: -0.01em;
+      line-height: 1.2;
+      color: #1f1b17;
+      margin-bottom: 0.8rem;
+      border-left: 5px solid #b7a692;
+      padding-left: 1.4rem;
+    }
+
+    .subhead {
+      font-size: 1.1rem;
+      color: #655c54;
+      margin-bottom: 2.8rem;
+      font-style: italic;
+      border-bottom: 1px solid #ddd5cb;
+      padding-bottom: 1.2rem;
+    }
+
+    .pull-quote {
+      background: #f0ebe4;
+      border-left: 6px solid #a0907c;
+      padding: 1.6rem 2rem 1.6rem 2.2rem;
+      margin: 2.2rem 0;
+      border-radius: 0 20px 20px 0;
+      font-size: 1.05rem;
+      color: #2c2620;
+    }
+
+    .pull-quote::before {
+      content: "“";
+      font-size: 2.8rem;
+      color: #a0907c;
+      font-family: serif;
+      line-height: 0.6;
+      vertical-align: middle;
+      margin-right: 6px;
+    }
+
+    h2 {
+      font-size: 1.6rem;
+      font-weight: 400;
+      margin-top: 2.8rem;
+      margin-bottom: 0.8rem;
+      color: #302b26;
+      letter-spacing: 0.02em;
+    }
+
+    p {
+      margin-bottom: 1.5rem;
+      text-align: justify;
+      font-size: 1.02rem;
+    }
+
+    .insight-box {
+      background: #f3eee7;
+      padding: 1.6rem 2rem;
+      border-radius: 24px;
+      margin: 2rem 0;
+      border: 1px solid #dfd6cb;
+      box-shadow: inset 0 0 0 1px #fff9f3;
+    }
+
+    .insight-box strong {
+      color: #674f3a;
+      font-weight: 600;
+    }
+
+    .two-column {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2rem;
+      margin: 2.2rem 0;
+    }
+
+    .column-item {
+      background: #f9f5f0;
+      padding: 1.6rem 1.4rem;
+      border-radius: 20px;
+      border: 1px solid #e7dfd6;
+    }
+
+    .column-item h3 {
+      font-size: 1.15rem;
+      font-weight: 500;
+      margin-bottom: 0.6rem;
+      color: #4b3e34;
+      border-bottom: 1px dashed #d3c8bd;
+      padding-bottom: 0.4rem;
+    }
+
+    .faq-mini {
+      background: #ede7df;
+      padding: 1.8rem 2rem;
+      border-radius: 24px;
+      margin: 2.5rem 0 2rem;
+    }
+
+    .faq-mini details {
+      margin-bottom: 0.8rem;
+      border-bottom: 1px solid #d7cfc5;
+      padding-bottom: 0.6rem;
+    }
+
+    .faq-mini summary {
+      font-weight: 500;
+      cursor: pointer;
+      color: #3f342d;
+      padding: 0.3rem 0;
+      font-size: 1.02rem;
+    }
+
+    .faq-mini details[open] summary {
+      color: #674f3a;
+    }
+
+    .faq-mini p {
+      margin-left: 0.8rem;
+      margin-top: 0.5rem;
+      color: #3e3730;
+      font-size: 0.97rem;
+    }
+
+    .footer-note {
+      margin-top: 3rem;
+      padding-top: 1.8rem;
+      border-top: 2px solid #e4dbd1;
+      text-align: center;
+      font-size: 1rem;
+      color: #4b4038;
+    }
+
+    .footer-note a {
+      color: #5a4637;
+      text-decoration: none;
+      border-bottom: 1px dotted #a0907c;
+      font-weight: 500;
+      transition: border 0.2s;
+    }
+
+    .footer-note a:hover {
+      border-bottom: 2px solid #7b6652;
+    }
+
+    .fine-print {
+      margin-top: 1.5rem;
+      font-size: 0.8rem;
+      color: #8f8278;
+      letter-spacing: 0.3px;
+    }
+
+    @media (max-width: 640px) {
+      .magazine-wrapper {
+        padding: 2rem 1.2rem 3rem;
+      }
+      h1 {
+        font-size: 1.9rem;
+        padding-left: 1rem;
+      }
+      .two-column {
+        grid-template-columns: 1fr;
+        gap: 1.2rem;
+      }
+      .pull-quote {
+        padding: 1.2rem 1.4rem;
+      }
+      .faq-mini {
+        padding: 1.2rem;
+      }
+    }
+  </style>
+</head>
+<body>
+<div class="magazine-wrapper">
+  <div class="hero-badge">✦ 运动生活指南</div>
+  <h1>鲸鱼体育 · 温和的陪伴</h1>
+  <div class="subhead">一份关于节奏、选择与日常运动的简明笔记</div>
+
+  <p>「鲸鱼体育」这个名字，总会让人想起海洋里沉稳而有力的身影——它们不急不躁，却游得很远。这恰好也是运动本该有的样子：不需要刻意追赶什么，找到自己的频率就好。我们想做的，就是把这样一份从容的体育信息，用一种清晰的方式放在你面前。</p>
+
+  <div class="pull-quote">
+    不必把运动想得太复杂，有时候，一个简单的开始比完美的计划更重要。
+  </div>
+
+  <h2>从何处入手</h2>
+  <p>很多人面对体育资讯的第一反应是信息过载。各类赛事、训练方法、装备推荐铺天盖地。而 <a href="https://h5-jingyusports.com" style="color:#5a4637; text-decoration: underline; text-underline-offset: 3px; text-decoration-color: #b7a692;">鲸鱼体育</a> 更像一位熟悉路况的向导，它帮你把内容做了梳理——从基础入门到进阶技巧，从热门运动到冷门项目，都按你可能的兴趣自然地排列。你不需要四处翻找，打开就能看到自己关心的那部分。</p>
+
+  <div class="insight-box">
+    <strong>一个小建议：</strong> 如果是第一次接触，不妨从“运动日志”或“今日看点”这类栏目开始。它们篇幅不长，但往往能勾起你尝试的念头。好的开始，有时候只是一条五分钟的短视频或一篇千字短文。
+  </div>
+
+  <h2>三个值得留意的方向</h2>
+  <div class="two-column">
+    <div class="column-item">
+      <h3>节奏比强度优先</h3>
+      <p>无论你是资深爱好者还是刚开始活动身体，可持续的关键都在于节奏。鲸鱼体育的内容设计也遵循这个逻辑：每篇文章、每段视频都控制信息密度，不会让你感到被催促。你可以在通勤、午休或睡前慢慢翻阅。</p>
+    </div>
+    <div class="column-item">
+      <h3>知识更贴近日常</h3>
+      <p>这里不谈夸张的“七天瘦十斤”或“极限突破”，而是关注和日常生活有关联的运动知识——比如怎样调整跑姿减少膝盖负担、办公室拉伸的合理时长、周末户外出行的装备清单。真实、可用，是它筛选内容的第一标准。</p>
+    </div>
+  </div>
+
+  <div class="two-column">
+    <div class="column-item">
+      <h3>社区氛围安静</h3>
+      <p>很多运动平台容易陷入比较和炫耀的氛围，鲸鱼体育刻意保持了低噪。用户分享、评论区的交流更偏向实用提问与经验交换。如果你不喜欢过度社交，这里会让你觉得自在。</p>
+    </div>
+    <div class="column-item">
+      <h3>持续更新的节奏</h3>
+      <p>每周都有新内容入库，但不会狂轰滥炸。你可以根据自己的时间安排来查阅，错过几期也没关系——每篇文章都相对独立，不会因为断读而跟不上。</p>
+    </div>
+  </div>
+
+  <div class="faq-mini">
+    <h3 style="font-weight: 400; font-size:1.2rem; margin-bottom:1rem; color:#3f342d;">一些常见的小疑问</h3>
+    <details>
+      <summary>我运动基础很差，适合看这个平台吗？</summary>
+      <p>当然。这里有大量面向新手的说明文章，从“如何选择第一双跑鞋”到“核心力量入门动作”，都写得平实易懂。你完全可以从零开始。</p>
+    </details>
+    <details>
+      <summary>内容偏重哪些运动？</summary>
+      <p>覆盖范围挺广的：跑步、游泳、骑行、瑜伽、力量训练、球类运动都有涉及。不过它不会追求大而全，而是每类都挑最实用的部分呈现。</p>
+    </details>
+    <details>
+      <summary>需要注册才能浏览吗？</summary>
+      <p>大部分内容可以直接阅读，部分互动功能可能需要简单注册。你可以先随意浏览，觉得合适再决定是否加入。</p>
+    </details>
+  </div>
+
+  <p style="margin-top:1.8rem;">运动不该成为一种负担，也不该被包装成某种神话。它只是生活里一件自然的小事——像喝水、像散步、像周末和朋友约一场球。如果你也认同这种感觉，不妨把 <a href="https://h5-jingyusports.com" style="color:#5a4637; text-decoration: underline; text-underline-offset: 3px; text-decoration-color: #b7a692;">鲸鱼体育</a> 当作一个安静的参考，在需要的时候翻一翻，不需要的时候也无需惦念。</p>
+
+  <div class="footer-note">
+    <span>找到你的节奏 · 保持你的步调</span>
+    <div class="fine-print">
+      <a href="https://h5-jingyusports.com" style="border-bottom: none; color:#7b6652;">鲸鱼体育</a> · 一份温和的运动生活读物
+    </div>
+  </div>
+</div>
+</body>
+</html>
